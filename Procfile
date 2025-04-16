@@ -1,0 +1,1 @@
+web: gunicorn interview_analyzer.wsgi
