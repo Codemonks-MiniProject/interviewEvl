@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interview Results</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin-top: 2rem;
+    }
+    .result-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .result-card {
+      background: #ffffff;
+      padding: 1.5rem;
+      border: 1px solid #dee2e6;
+      border-radius: 5px;
+      margin-bottom: 1.5rem;
+    }
+    .progress {
+      height: 25px;
+    }
+    .transcript-box {
+      background: #e9ecef;
+      padding: 1rem;
+      border-radius: 5px;
+      font-size: 0.95rem;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="result-header">
+      <h1>Your Interview Results</h1>
+      <p>Review your detailed scores below.</p>
+    </div>
+
+    <div class="result-card">
+      <h4>Facial Confidence</h4>
+      <p class="fs-3">{{ facial }}%</p>
+      <div class="progress">
+        <div class="progress-bar bg-success" style="width: {{ facial }}%;" role="progressbar" aria-valuenow="{{ facial }}" aria-valuemin="0" aria-valuemax="100">
+          {{ facial }}%
+        </div>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <h4>Vocal Confidence</h4>
+      <p class="fs-3">{{ voice }}%</p>
+      <div class="progress">
+        <div class="progress-bar bg-info" style="width: {{ voice }}%;" role="progressbar" aria-valuenow="{{ voice }}" aria-valuemin="0" aria-valuemax="100">
+          {{ voice }}%
+        </div>
+      </div>
+    </div>
+
+    <div class="result-card">
+      <h4>Technical & Language Score</h4>
+      <p class="fs-3">{{ technical }}%</p>
+      <div class="progress">
+        <div class="progress-bar bg-warning" style="width: {{ technical }}%;" role="progressbar" aria-valuenow="{{ technical }}" aria-valuemin="0" aria-valuemax="100">
+          {{ technical }}%
+        </div>
+      </div>
+    </div>
+
+    <div class="result-card text-center">
+      <h3>Final AI Confidence Score</h3>
+      <p class="fs-1">{{ final_score }}%</p>
+    </div>
+
+    <div class="result-card">
+      <h4>Transcript</h4>
+      <div class="transcript-box">
+        {{ transcript }}
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
